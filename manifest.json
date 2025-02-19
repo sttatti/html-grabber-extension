@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "HTML Grabber",
+  "description": "Fetches the HTML of the current page when clicking the extension icon",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title": "Fetch HTML"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
